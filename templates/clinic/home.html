@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block content %}
+<h2>Find a Doctor</h2>
+<div class="grid grid-cols-2">
+  {% for d in doctors %}
+    <div class="card">
+      <h3>Dr. {{ d.user.get_full_name|default:d.user.username }}</h3>
+      <div><b>{{ d.specialization }}</b></div>
+      <div>Fees: ₹{{ d.fees }}</div>
+      <a class="btn" href="{% url 'doctor_detail' d.pk %}">View</a>
+    </div>
+  {% empty %}
+    <p>No doctors yet. Doctors can create their profile from “My Profile”.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<h2>Dr. {{ doctor.user.get_full_name|default:doctor.user.username }}</h2>
+<p><b>{{ doctor.specialization }}</b></p>
+<p>{{ doctor.bio }}</p>
+<p>Fees: ₹{{ doctor.fees }} | Phone: {{ doctor.phone }}</p>
+<a class="btn btn-primary" href="{% url 'book_appointment' %}">Book an Appointment</a>
+{% endblock %}

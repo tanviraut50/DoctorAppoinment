@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width:500px; margin:auto; padding:20px; border:1px solid #ddd; border-radius:8px;">
+    <h2 style="text-align:center;">Book an Appointment</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" style="padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer;">
+            Book Appointment
+        </button>
+    </form>
+
+    <p style="text-align:center; margin-top:10px;">
+        <a href="{% url 'my_appointments' %}">View My Appointments</a>
+    </p>
+</div>
+{% endblock %}

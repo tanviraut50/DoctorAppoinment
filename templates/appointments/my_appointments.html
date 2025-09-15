@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width:600px; margin:auto;">
+    <h2 style="text-align:center;">My Appointments</h2>
+
+    {% if appointments %}
+        <ul style="list-style:none; padding:0;">
+            {% for appointment in appointments %}
+                <li style="margin-bottom:10px; padding:10px; border:1px solid #ddd; border-radius:4px;">
+                    <strong>{{ appointment.doctor }}</strong> 
+                    on {{ appointment.date }} at {{ appointment.time }}
+                    <a href="{% url 'cancel_appointment' appointment.pk %}" style="color:red; margin-left:10px;">Cancel</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p style="text-align:center;">No appointments booked yet.</p>
+    {% endif %}
+
+    <p style="text-align:center; margin-top:10px;">
+        <a href="{% url 'book_appointment' %}">Book New Appointment</a>
+    </p>
+</div>
+{% endblock %}
