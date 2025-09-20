@@ -130,3 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
      
+
+import dj_database_url
+DATABASES = {
+         'default': dj_database_url.config(default='sqlite:///db.sqlite3')
+     }
+     
