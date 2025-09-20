@@ -115,7 +115,11 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
+LOGOUT_REDIRECT_URL = '/'
+LOGOUT_URL = "logout/"
+# after LOGIN_URL = 'login' (if you set it)
+LOGIN_REDIRECT_URL = '/'   # send users to homepage after login
+  # send users to homepage after logout
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -136,5 +140,5 @@ DATABASES = {
          'default': dj_database_url.config(default='sqlite:///db.sqlite3')
      }
      
-ROOT_URLCONF = 'doctor_appointment.urls'
-WSGI_APPLICATION = 'doctor_appointment.wsgi.application'
+ROOT_URLCONF = 'doctor_appointmen.urls'
+WSGI_APPLICATION = 'doctor_appointmen.wsgi.application'
