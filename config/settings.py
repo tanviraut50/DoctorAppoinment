@@ -136,3 +136,5 @@ DATABASES = {
          'default': dj_database_url.config(default='sqlite:///db.sqlite3')
      }
      
+ROOT_URLCONF = 'doctor_appointment.urls'
+WSGI_APPLICATION = 'doctor_appointment.wsgi.application'
