@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-xwgyq&94=mx#)nnh6w*#h4_aj%s(_0#5hx_k!5a4e@#ornh#^w
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['doctor_appointmen.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -125,3 +126,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+     

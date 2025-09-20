@@ -1,0 +1,1 @@
+web: gunicorn doctor_appointmen.wsgi:application
